@@ -74,7 +74,14 @@
 
   /* intro styles */
   #intro {
-    padding-bottom: 10rem;
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    /*padding-bottom: 10rem;*/
+  }
+  #intro .percent {
+    height: 25vh;
   }
   #intro p {
     /* Rem (short for “root-em”) units dictate an element's font size relative to the size of the root element. By default, most browsers use a font size value of 16px. So, if the root element is 16px, an element with the value 1rem will also equal 16px. */
@@ -90,8 +97,10 @@
     color: var(--white);
     font-weight: 600;
     display: block;
-    margin-top: 16px;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
     line-height: 0.8;
+    
   }
   #intro h2 {
     font-size: 4rem;
@@ -103,6 +112,8 @@
   }
   #intro .software-engineer {
     color: var(--dk_grey);
+    max-width: 50%;
+    font-family: var(--sans);
   }
   
   /* contact_me styles */
@@ -119,13 +130,18 @@
     color: var(--lt_grey);
     font-size: 3rem;
     font-family: var(--sans);
+    font-weight: 700;
+    padding-bottom: 1rem;
   }
   #contact_me .message {
     color: var(--dk_grey);
-    font-family: var(--mono);
+    font-family: var(--sans);
   }
   #contact_me p:last-child {
     margin-top: 4rem;
+  }
+  #contact_me .percent {
+    height: 30vh;
   }
 
    /* ***************************************************************
@@ -168,13 +184,13 @@
     flex-flow: row nowrap;
     left: 0;
     padding-left: 2.2rem;
-    box-shadow: 0 0 3px 10px var(--dark-navy);
-    z-index: 5;
+    
+    /* z-index: 5; */
 
     /* From https://css.glass */
     background: rgba(10, 25, 47, 0.86);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(90px);
+     backdrop-filter: blur(90px); 
     -webkit-backdrop-filter: blur(20px);
 
   }
@@ -246,10 +262,6 @@
 
 
 /* left-vertical-navbar */
-.vertical-navbars {
-    
-    
-}
 .vertical-navbars-ul {
     list-style-type: none;
     padding: 0;
@@ -332,10 +344,21 @@
    /* ******************************************************************
                     Projects
   ********************************************************************* */
+  #projects {
+    padding-top: 8rem;
+  }
 #projects h2 {
   font-size: 2.5rem;
 }
-
+.numbers-section {
+  color: var(--green);
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: var(--mono);
+}
+#projects .project-description {
+  text-align: left;
+}
 
 
 
@@ -369,6 +392,7 @@
     bottom:0;
     width: 30rem;
     z-index: 1;
+    color: var(--dk_grey);
   }
   #footer div{
     display: flex;
@@ -380,7 +404,48 @@
   }
   
 
-
+     /* ******************************************************************
+                    About-Me --- universal
+  ********************************************************************* */
+  #about_me {
+    padding-top: 8rem;
+  }
+  .section_heading {
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5);
+    font-family: var(--sans);
+    font-weight: 700;
+    color: var(--lt_grey);
+  }
+  .text {
+    font-family: var(--sans);
+    color: var(--dk_grey);
+    padding: 0;
+    
+  }
+  #technologies {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-family: var(--sans);
+    color: var(--dk_grey);
+  }
+  #about_me .grid-about-me {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  #about_me .grid-text {
+    grid-column: 2/7;
+  }
+  #about_me .grid-img {
+    grid-column: 8/11;
+  }
+  #about_me .grid-about-me .grid-img img {
+    max-width: 200px;
+    border-radius: 3px;
+    /* opacity: 0.2; */
+  }
+  
 
      /* ******************************************************************
                     Media Queries
@@ -417,6 +482,16 @@
     padding: 0 2rem;
   }
   
+  #intro {
+    height: 90vh;  
+  }
+  #intro .percent {
+    height: 30vh;
+  }
+  #intro .software-engineer {
+    max-width: 100%;
+  }
+
     #main-navbar {
       padding-left: 0;
     }
@@ -432,18 +507,45 @@
     #main-navbar .hamburger.active .bar:nth-child(3){
         transform: translateY(-8px) rotate(-45deg);
     }
-    .hamburger.active .navbar {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
+    #main-navbar .nav-menu.active {
+       right:0;
+    }
+    #main-navbar .click-out.active {
+      left: 0;
+    }
+    /* The backdrop-filter property made 90% of the nav-menu 
+    disappear/move out of the screen. I don't know why. So I'm 
+    deactivating it so that nav-menu can reappear in a normal 
+    way when the hamburger button is active */
+    #main-navbar.active {
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
-    /* The 60% blue background */
-    #the-ul {
+
+    /* The nav-menu background */
+    #main-navbar .click-out {
+      z-index: 2;
+    }
+    #main-navbar .nav-menu {
       z-index: 8;
     }
     #main-navbar .hamburger {
         z-index: 9;
+    }
+    #main-navbar .click-out {
+      position: fixed;
+
+      /* From https://css.glass */
+      background: rgba(1, 25, 47, 0.01);
+      backdrop-filter: blur(4px); 
+      -webkit-backdrop-filter: blur(9px);
+
+      height: 100%;
+      width: 80%;
+      left: -5000px;
+      top: 0;
+      z-index: 7;
     }
     #main-navbar .nav-menu {
         position: fixed;
@@ -454,16 +556,16 @@
         gap: 1.5rem;
         flex-direction: column;
         background-color: var(--txt_bg_blue);
-        width: 80%;
+        width: 70%;
         height: 100%;
         margin: 0;
         padding: 15rem 0;
         text-align: center;
         right: -200%;
-        z-index: 2;
+        z-index: 8;
         /*transition: 0.3s;*/
     }
-    #main-navbar .nav-menu.active {
+    p {
         right: 0;
     }
     #main-navbar .numbers {
@@ -488,14 +590,41 @@
     }
 
    
+   
 
 }
 
 /* For some weird reason, she wants the mobile version of the project section to be shown on screens 
   that are 550px or less and not 850px*/
 @media (max-width: 550px) {
+   /* **********************************************************
+          about me --- mobile
+    *************************************************************/
+    #about_me .grid-about-me {
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    #about_me .grid-text {
+    grid-row: 2/4;
+    grid-column: 1/11;
+  }
+  #about_me .grid-img {
+    grid-row: 1/2;
+    grid-column: 2/10;
+  }
+  #about_me .grid-about-me .grid-img img {
+    max-width: 400px;
+    border-radius: 3px;
+  }
+  #about_me .grid-about-me {
+    padding: 3.3rem 2rem 0rem 2rem;
+    box-shadow: 0px 0px 100px -1px var(--txt_bg_blue);
+    
+    margin: 0 auto 4rem;
+  }
+
    /* ******************************************************************
-                    Projects
+                    Projects--mobile
   ********************************************************************* */
   .numbers {
     color: var(--green);
@@ -523,6 +652,7 @@
   #projects h4 {
     font-size: 1rem;
     margin: 0;
+    color: var(--dk_grey);
   }
   #projects p {
     /*background-color: var(--txt_bg_blue);*/
@@ -542,6 +672,7 @@
     padding: 0;
     display:flexbox;
     flex-direction: row ;
+    color: var(--dk_grey);
     /*gap: 1rem;*/
     
     justify-content: flex-start;
@@ -562,7 +693,7 @@
   #projects .icon-links {
     display:flex;
     flex-direction: row;
-    gap: 4rem;
+    gap: 2rem;
     justify-content: flex-start;
     font-size: 1.5rem;
     margin: 1rem 0;
@@ -606,14 +737,13 @@
     
     display:flex;
     flex-direction: row;
-    gap: 4rem;
-    justify-content: flex-start;
+    gap: 2rem;
     font-size: 1.5rem;
     margin: 1rem 0;
   }
-  img {
+  /* img {
     backgro: #64ffda;
-  }
+  } */
   .technologies-list{
     display:flex;
     flex-direction: row nowrap;
@@ -621,6 +751,7 @@
     
     justify-content: flex-end;
     font-size: 1rem;
+    color: var(--dk_grey);
   }
   #clicknpay-tech {
     display:flex;
@@ -650,12 +781,7 @@
     font-family: var(--sans);
     font-weight: 600;
   }
-  .numbers-section {
-    color: var(--green);
-    font-size: 1.8rem;
-    font-weight: 400;
-    font-family: var(--mono);
-  }
+
   #projects h2 {
     font-size: 2.5rem;
     margin-bottom: calc(2.5rem * 1.5);
@@ -676,6 +802,7 @@
   #projects h4 {
     font-size: 1rem;
     margin: 0;
+    color: var(--dk_grey);
   }
   #grid-image-jpj {
     grid-column: 1/7;
