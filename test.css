@@ -610,6 +610,7 @@
     #about_me .grid-about-me {
       grid-template-rows: repeat(2, 1fr);
       gap: 2rem;
+      width: 100vw;
     }
     #about_me .grid-text {
     grid-row: 2/4;
