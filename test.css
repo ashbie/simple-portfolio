@@ -516,6 +516,10 @@
     #main-navbar .click-out.active {
       left: 0;
     }
+    #footer.active {
+      position: relative;
+      left: -2000px;
+    }
     /* The backdrop-filter property made 90% of the nav-menu 
     disappear/move out of the screen. I don't know why. So I'm 
     deactivating it so that nav-menu can reappear in a normal 
