@@ -829,6 +829,17 @@
     grid-row: 1/2;
   }
   
+
+  /* **********************************************
+          Edited coz deployed version was not
+          displaying the styles the way the dev environment was
+  **************************************************/
+  #about-me-text {
+    margin-top: -2rem;
+  }
+  .project-articles {
+    width: 100vw; margin: 0 auto 2rem;
+  }
 }
 
 
