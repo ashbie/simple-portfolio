@@ -712,7 +712,7 @@
     /*background-color: #122E3F;*/
     padding: 3.3rem 2rem 1rem 2rem;
     box-shadow: 0px 0px 100px -1px var(--txt_bg_blue);
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto 4rem;
 
      /* From https://css.glass 
@@ -721,6 +721,16 @@
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);*/
+  }
+   /* **********************************************
+          Edited coz deployed version was not
+          displaying the styles the way the dev environment was
+  **************************************************/
+  #about-me-text {
+    margin-top: -2rem;
+  }
+  .project-articles {
+    width: 100vw; margin: 0 auto 2rem;
   }
 }
 
@@ -827,18 +837,6 @@
   #grid-image-clicknpay {
     grid-column: 5/11;
     grid-row: 1/2;
-  }
-  
-
-  /* **********************************************
-          Edited coz deployed version was not
-          displaying the styles the way the dev environment was
-  **************************************************/
-  #about-me-text {
-    margin-top: -2rem;
-  }
-  .project-articles {
-    width: 100vw; margin: 0 auto 2rem;
   }
 }
 
