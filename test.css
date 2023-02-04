@@ -156,7 +156,6 @@
     text-decoration: none;
     color: var(--green); 
     transition: var(--transition);
-    z-index: -1;
   }
   .bttn:hover {
     border: 1px solid var(--bg_blue);
@@ -461,7 +460,7 @@
       max-width: 1700px;
       margin: 0 auto;
       right: 0;
-      left: 0;
+      left: 0;    
     } */
     body {
       
@@ -526,6 +525,10 @@
     }
     #main-navbar .click-out.active {
       left: 0;
+    }
+    #contact_me.active {
+      position: relative;
+      left: -2000px;
     }
     #footer.active {
       position: relative;
