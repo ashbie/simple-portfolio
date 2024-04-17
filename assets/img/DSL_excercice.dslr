@@ -1,0 +1,53 @@
+import function com.kmse.hicp.common.business.rules.tools.ValidationHelper.warning;
+import function com.kmse.hicp.common.business.rules.tools.ValidationHelper.error;
+import function com.kmse.hicp.letoile.tools.HarvestHelper.getMin;
+import function com.kmse.hicp.letoile.tools.HarvestHelper.getMax;
+import java.util.*;
+
+import com.kmse.hicp.common.drool.helper.GeneralHelper;
+import com.kmse.hicp.model.core.param.common.accounting.*;
+import com.kmse.hicp.model.core.param.common.contract.*;
+import com.kmse.hicp.model.core.param.common.transverse.*;
+import com.kmse.hicp.model.core.param.insurance.common.*;
+import com.kmse.hicp.model.core.production.*;
+import com.kmse.hicp.model.core.production.common.accounting.*;
+import com.kmse.hicp.model.core.production.common.contract.*;
+import com.kmse.hicp.model.core.production.common.transverse.*;
+import com.kmse.hicp.model.core.production.insurance.*;
+import com.kmse.hicp.model.core.production.insurance.common.*;
+import com.kmse.hicp.model.core.production.insurance.common.claim.*;
+import com.kmse.hicp.model.core.production.insurance.common.contract.*;
+import com.kmse.hicp.model.core.production.insurance.risk.*;
+import com.kmse.hicp.model.core.production.insurance.risk.preset.*;
+import com.kmse.hicp.model.core.param.insurance.common.transverse.*;
+import com.kmse.hicp.model.core.production.insurance.common.transverse.*;
+import com.kmse.hicp.model.core.production.common.transverse.OrganizationUnit.*;
+import com.kmse.hicp.common.business.rules.tools.*;
+
+global ValidationReport validationReport;
+global ReportFactory reportFactory;
+
+
+
+
+
+rule "	There must be an organziation "
+  when
+      Organization does not exist
+  then
+      Throw a validation error for "Organization";
+end
+
+
+rule "	rule 2 "
+  when
+      There is a Organization
+      Get the PartyAddress from organization
+      Get HomeAddress of type Address from partyaddress
+      Get CountryName of type String from homeaddress
+      check if countryname equal to 'FRANCE'
+      Get CodePostal of type String from homeaddress
+      codepostal doesn’t have exactly 5 characters
+  then
+      Toss customized error of type "ERR_TYPE_val" with message "zip code format not valid";
+end
