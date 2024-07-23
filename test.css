@@ -46,6 +46,10 @@
   h2,
   h3 {
     margin: 0;
+    word-break: break-word;
+  }
+  p {
+    word-break: break-word;
   }
   a {
     color: var(--lt_grey);
@@ -56,6 +60,11 @@
   }
   img {
     width: 100%;
+  }
+  .fake-text {
+    overflow: hidden;
+    user-select: none;
+    color: transparent !important;
   }
   
   /* Reusable clasees & universal styles*/
@@ -75,17 +84,15 @@
   /* intro styles */
   #intro {
     height: 100vh;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    /*padding-bottom: 10rem;*/
   }
   #intro .percent {
     height: 25vh;
+    min-height: 130px;
   }
   #intro p {
     /* Rem (short for “root-em”) units dictate an element's font size relative to the size of the root element. By default, most browsers use a font size value of 16px. So, if the root element is 16px, an element with the value 1rem will also equal 16px. */
     font-size: 1rem;
+    word-break: break-word;
   }
   #intro .name {
     font-family: var(--mono);
@@ -100,7 +107,7 @@
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     line-height: 0.8;
-    
+    word-break: break-word;    
   }
   #intro h2 {
     font-size: 4rem;
@@ -109,6 +116,7 @@
     margin-bottom: 20px;
     line-height: 0.8;
     font-family: var(--sans);
+    word-break: break-word;
   }
   #intro .software-engineer {
     color: var(--dk_grey);
@@ -184,14 +192,14 @@
     flex-flow: row nowrap;
     left: 0;
     padding-left: 2.2rem;
-    
-    /* z-index: 5; */
 
     /* From https://css.glass */
     background: rgba(10, 25, 47, 0.86);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
      backdrop-filter: blur(90px); 
     -webkit-backdrop-filter: blur(20px);
+
+    z-index: 99;
 
   }
   #main-navbar a {
@@ -393,7 +401,6 @@
     margin: 0 auto;
     /**/
     bottom:0;
-    width: 30rem;
     z-index: 1;
     color: var(--dk_grey);
   }
@@ -404,6 +411,8 @@
   #footer p {
     display: inline-block;
     margin-bottom: 4rem;
+    padding: 0 32px;
+    text-align: center;
   }
   
 
@@ -432,6 +441,8 @@
     gap: 2rem;
     font-family: var(--sans);
     color: var(--dk_grey);
+    flex-wrap: wrap;
+    padding-bottom: 48px;
   }
   #about_me .grid-about-me {
     display: grid;
@@ -495,9 +506,9 @@
     padding: 0 2rem;
   }
   
-  #intro {
+  /*#intro {
     height: 90vh;  
-  }
+  }*/
   #intro .percent {
     height: 30vh;
   }
@@ -507,6 +518,7 @@
 
     #main-navbar {
       padding-left: 0;
+      gap: unset;
     }
     #main-navbar .hamburger {
         display: block;
@@ -607,7 +619,10 @@
       flex-direction: row;
       gap: 3rem;
       font-size: 1.8rem;
-      justify-content: center;
+      padding: 0 32px;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 5px;
     }
 
    
@@ -618,6 +633,39 @@
 /* For some weird reason, she wants the mobile version of the project section to be shown on screens 
   that are 550px or less and not 850px*/
 @media (max-width: 550px) {
+  html {
+    width: unset;
+    overflow: hidden;
+    overflow-x: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 88px;
+    height: unset;
+  }
+  body {
+    padding: unset;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+  #intro {
+    width: 100%;
+    padding: 0 16px;
+    padding: 0 32px;
+    @media (max-width: 349px) {
+      height: fit-content;
+    }
+  }
+  #intro h2, .name span  {
+    line-height: 1;
+  }
+  .section_heading {
+    padding-left: 32px;
+  }
+
    /* **********************************************************
           about me --- mobile
     *************************************************************/
@@ -626,8 +674,14 @@
       width: 100vw;
     }
     #about_me .grid-text {
-    grid-row: 2/4;
-    grid-column: 1/11;
+    /*grid-row: 2/4;*/
+    grid-column: 2 / 10;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
+    grid-row: 2 / 3;
   }
   #about_me .grid-img {
     grid-row: 1/2;
@@ -640,8 +694,11 @@
   #about_me .grid-about-me {
     padding: 3.3rem 2rem 0rem 2rem;
     box-shadow: 0px 0px 100px -1px var(--txt_bg_blue);
-    
     margin: 0 auto 4rem;
+    grid-template-rows: max-content;
+    padding: unset !important;
+    width: 100%;
+    row-gap: 32px;
   }
 
    /* ******************************************************************
@@ -658,6 +715,14 @@
     margin-bottom: calc(2.5rem * 1.5);
     font-family: var(--sans);
     font-weight: 700;
+    padding-left: calc(64px + 18px);
+    padding-right: 16px;
+    position: relative;
+  }
+  #projects h2 .numbers-section {
+    position: absolute;
+    left: 32px;
+    top: 10px;
   }
   #projects .featured-project {
     color: var(--green);
@@ -742,9 +807,15 @@
   **************************************************/
   #about-me-text {
     margin-top: -2rem;
+    margin: unset;
   }
-  .project-articles {
-    width: 100vw; margin: 0 auto 2rem;
+
+  /*****************************************
+  *             Contact Me
+  *****************************************/
+  #contact_me {
+    width: 100%;
+    padding: 0 32px;
   }
 }
 
