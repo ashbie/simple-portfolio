@@ -17,6 +17,14 @@
     --font-size: 1.3rem;
     --mono: "Fira code", monospace;
     --sans: "Inter", sans-serif;
+    --fz-xxs: 12px;
+    --fz-xs: 13px;
+    --fz-sm: 14px;
+    --fz-md: 16px;
+    --fz-lg: 18px;
+    --fz-xl: 20px;
+    --fz-xxl: 22px;
+    --fz-heading: 32px;
     --transition: all 0.1s cubic-bezier(0.645,0.045,0.355,1);
   }
   /* border box model: https://css-tricks.com/box-sizing/ */
@@ -83,40 +91,47 @@
 
   /* intro styles */
   #intro {
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: calc(100vh - 88px);
   }
   #intro .percent {
     height: 25vh;
     min-height: 130px;
+    display: none;
   }
   #intro p {
     /* Rem (short for “root-em”) units dictate an element's font size relative to the size of the root element. By default, most browsers use a font size value of 16px. So, if the root element is 16px, an element with the value 1rem will also equal 16px. */
     font-size: 1rem;
     word-break: break-word;
   }
-  #intro .name {
+  #intro .name { /* Hi, my name is */
     font-family: var(--mono);
     color: var(--green);
+    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
+    line-height: 1.1;
+    margin: 0;
   }
-  .name span {
+  .name span { /* Ashbie B. Mweemba */
     font-family: var(--sans);
-    font-size: 4rem;
     color: var(--white);
     font-weight: 600;
     display: block;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-    line-height: 0.8;
-    word-break: break-word;    
+    margin-top: 30px;
+    word-break: break-word;
+    font-size: clamp(40px, 8vw, 80px);
+    line-height: 1.1; 
   }
-  #intro h2 {
-    font-size: 4rem;
+  #intro h2 { /* I build things ... */
     color: var(--dk_grey);
     font-weight: 600;
     margin-bottom: 20px;
-    line-height: 0.8;
     font-family: var(--sans);
     word-break: break-word;
+    font-size: clamp(40px, 8vw, 80px);
+    line-height: 0.9;
   }
   #intro .software-engineer {
     color: var(--dk_grey);
@@ -658,9 +673,6 @@
     @media (max-width: 349px) {
       height: fit-content;
     }
-  }
-  #intro h2, .name span  {
-    line-height: 1;
   }
   .section_heading {
     padding-left: 32px;
