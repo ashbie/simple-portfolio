@@ -1,0 +1,24 @@
+Why I am the best candidate for the C++ Developer role:
+I am excited about the opportunity to join your team as a C++ Developer. Although I am a recent graduate with a degree in Software Engineering, I have a solid foundation in C++ and a strong theoretical background that aligns well with your requirements.
+
+1. Strong theoretical background and practical knowledge:
+I took the initiative to learn C++ through a comprehensive course on Pluralsight, where I gained a deep understanding of the language, including its standard library and design patterns. I am well-versed in the language's capabilities for creating fast and powerful applications. My knowledge extends to algorithms and data structures, which are crucial for efficient problem-solving in C++.
+
+2. Proven problem-solving skills:
+My academic projects and freelance work have honed my problem-solving abilities. For my end-of-study project, I developed a home-sharing web application using technologies like React, Node.js, GraphQL, Google OAuth, and the Stripe API. This project showcased my full-stack development skills and my ability to integrate various technologies to create a seamless user experience.
+
+3. Adaptability and Creativiy:
+I have demonstrated adaptability and creativity in my freelance web design work, where I not only designed but also implemented web solutions. This experience has equipped me with a fresh and creative approach to problem-solving, which I believe is essential for the role you are offering.
+
+4. Eagerness to learn and grow:
+While I may not have professional experience specifically in C++, my eagerness to learn and grow in this field is unwavering. I am confident that my strong theoretical background, combined with my practical experience in software development, makes me a valuable addition to your team.
+
+5. Language proficiency:
+I am fluent in English, which ensures clear and effective communication within your team.
+
+6. Alignment with your requirements:
+I reside within the time zones of UTC-1 to UTC+4, making me eligible for the remote position you are offering.
+
+I am enthusiastic about the opportunity to contribute to your team and am confident that my skills and dedication will make a positive impact. Thank you for considering my application.
+
+https://www.ashbie.tech (for additional information)
