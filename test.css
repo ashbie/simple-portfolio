@@ -42,6 +42,12 @@
     background-color: var(--bg_blue);
     color: var(--lt_grey);
     max-width: 1400px;
+    padding-top: 0;
+  }
+  @media (max-height: 766px) {
+    body {
+      padding-top: 88px !important;
+    }
   }
    
   *,
@@ -95,13 +101,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: calc(100vh - 88px);
+    /*height: calc(100vh - 88px);*/
+    height: 100vh;
+    grid-area: "isThisThingReallyGettingStylesFromTheInspect!!!";
+    min-height: 630px;
   }
+  /****** obsolete *******/
   #intro .percent {
     height: 25vh;
     min-height: 130px;
     display: none;
   }
+  /****************/
   #intro p {
     /* Rem (short for “root-em”) units dictate an element's font size relative to the size of the root element. By default, most browsers use a font size value of 16px. So, if the root element is 16px, an element with the value 1rem will also equal 16px. */
     font-size: 1rem;
@@ -138,6 +149,9 @@
     max-width: 50%;
     font-family: var(--sans);
   }
+  #intro .btn_wrapper { /* the 'read more' button */
+    margin-top: 50px;
+  }
   
   /* contact_me styles */
   #contact_me {
@@ -155,6 +169,7 @@
     font-family: var(--sans);
     font-weight: 700;
     padding-bottom: 1rem;
+    font-size: clamp(40px, 5vw, 60px);
   }
   #contact_me .message {
     color: var(--dk_grey);
@@ -378,6 +393,7 @@
   font-size: 1.8rem;
   font-weight: 400;
   font-family: var(--mono);
+  font-size: clamp(26px, 5vw, var(--fz-heading));
 }
 #projects .project-description {
   text-align: left;
@@ -443,6 +459,7 @@
     font-family: var(--sans);
     font-weight: 700;
     color: var(--lt_grey);
+    font-size: clamp(26px, 5vw, var(--fz-heading));
   }
   .text {
     font-family: var(--sans);
@@ -665,6 +682,7 @@
     min-width: 100%;
     height: 100%;
     overflow: auto;
+    padding-top: 0px !important;
   }
   #intro {
     width: 100%;
@@ -673,14 +691,19 @@
     @media (max-width: 349px) {
       height: fit-content;
     }
+    height: calc(100vh - 88px);
   }
   .section_heading {
     padding-left: 32px;
+    margin-bottom: 0px;
   }
 
    /* **********************************************************
           about me --- mobile
     *************************************************************/
+    #about_me {
+      padding-top: 2rem;
+    }
     #about_me .grid-about-me {
       grid-template-rows: repeat(2, 1fr);
       width: 100vw;
@@ -694,14 +717,21 @@
     justify-content: flex-start;
     gap: 32px;
     grid-row: 2 / 3;
+    grid-row: 1 / 2;
   }
   #about_me .grid-img {
     grid-row: 1/2;
     grid-column: 2/10;
+    grid-row: 2 / 3;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
   #about_me .grid-about-me .grid-img img {
     max-width: 400px;
     border-radius: 3px;
+    max-width: 264.31px;
+    width: 75vw;
   }
   #about_me .grid-about-me {
     padding: 3.3rem 2rem 0rem 2rem;
@@ -711,6 +741,13 @@
     padding: unset !important;
     width: 100%;
     row-gap: 32px;
+    padding-top: 32px !important;
+    padding-bottom: 52px !important;
+    box-shadow: unset;
+    row-gap: 50px;
+  }
+  #technologies {
+    padding-bottom: 0px;
   }
 
    /* ******************************************************************
@@ -730,11 +767,15 @@
     padding-left: calc(64px + 18px);
     padding-right: 16px;
     position: relative;
+    font-size: clamp(26px, 5vw, var(--fz-heading));
+    margin-bottom: unset;
+    padding-left: 32px;
   }
   #projects h2 .numbers-section {
     position: absolute;
     left: 32px;
     top: 10px;
+    position: static;
   }
   #projects .featured-project {
     color: var(--green);
@@ -812,6 +853,7 @@
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);*/
+    box-shadow: unset;
   }
    /* **********************************************
           Edited coz deployed version was not
@@ -901,6 +943,7 @@
     margin-bottom: calc(2.5rem * 1.5);
     font-family: var(--sans);
     font-weight: 700;
+    font-size: clamp(26px, 5vw, var(--fz-heading));
   }
   #projects .featured-project {
     color: var(--green);

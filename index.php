@@ -17,7 +17,7 @@ echo <<<ZYXABC
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Ashbie's Portfolio</title>
+      <title>Ashbie Beenzu Mweemba</title>
       <!-- My Favicon -->
       <link rel="icon" type="image/icon" href="/assets/img/from_wwwDfaviconDcc.ico">
       <!-- Google Fonts-->
@@ -28,7 +28,7 @@ echo <<<ZYXABC
       <script src="https://kit.fontawesome.com/64fab6af73.js" crossorigin="anonymous"></script>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
       <!-- My css -->
-      <link rel="stylesheet" href="test.css?v=1.2">
+      <link rel="stylesheet" href="test.css?v=1.2.1">
       
   </head>
   <body>
@@ -48,7 +48,7 @@ echo <<<ZYXABC
             <li class="nav-item"><a href="#projects" class="nav-link"><span class="numbers">02.</span>Projects</a></li>
             <!-- <li class="nav-item"><a href="#experience" class="nav-link"><span class="numbers">03.</span>Experience</a></li> -->
             <li class="nav-item"><a href="#contact_me" class="nav-link"><span class="numbers">03.</span>Contact</a></li>
-            <li class="nav-item"><a href="resume.html" target="_blank" class="bttn" id="resume-bttn">CV / Resume</a></li>
+            <li class="nav-item"><a href="cv_resume.pdf" target="_blank" class="bttn" id="resume-bttn">CV / Resume</a></li>
           
         </ul>
         <div class="hamburger">
@@ -83,21 +83,15 @@ echo <<<ZYXABC
     </nav>
     
     <section id="intro">
-      <div class="percent">
-        <p class="fake-text">
-          fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text
-          fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text
-          fake-textfake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text fake-text
-        </p>
-      </div>
+      
       <p class="name">Hi, my name is <span>Ashbie B. Mweemba.</span></p>
     
       <h2>I build things for the web.</h2>
     
       <p class="software-engineer">I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences.</p>
 
-      <div>
-      <a href="#about_me" class="bttn">Say Hello</a>
+      <div id="intro_rmBtn_wrapper" class="btn_wrapper">
+      <a id="intro_read_more" href="#about_me" class="bttn">Read More</a>
       </div>
     </section>
 
