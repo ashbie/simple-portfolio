@@ -35,7 +35,7 @@ echo <<<ZYXABC
       <!-- Navbar.Main -->
   <nav id="main-navbar" class="navbar">
       
-        <a id="anchor1-in-nav" class="nav-branding" href="index.html"><img src="assets/img/logo_cropped.png" alt="logo"></a>
+        <a id="anchor1-in-nav" class="nav-branding" href="/"><img src="assets/img/logo_cropped.png" alt="logo"></a>
       
       
     <!-- How that lady did her navbar -->
@@ -180,6 +180,7 @@ echo <<<ZYXABC
         
       </article>
 
+      <!-- Hide clickNpay
       <article  class="project-articles">
         <div  id="grid-text-clicknpay" class="project-grid-text">
           <h4 class="featured-project">Featured Project</h4>
@@ -219,6 +220,7 @@ echo <<<ZYXABC
         </div>
         
       </article>
+      -->
     </section>
     
 
